@@ -4,7 +4,7 @@
   "description": "Studying tests with JS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/*"
   },
   "repository": {
     "type": "git",
@@ -15,10 +15,16 @@
   "bugs": {
     "url": "https://github.com/andreroggeri/js-test-stack/issues"
   },
+  "type": "module",
   "homepage": "https://github.com/andreroggeri/js-test-stack#readme",
   "devDependencies": {
+    "@faker-js/faker": "^6.1.2",
+    "@types/chai-as-promised": "^7.1.5",
+    "@types/mysql": "^2.15.21",
     "chai": "^4.3.6",
+    "chai-as-promised": "^7.1.1",
     "mocha": "^9.2.2",
+    "mysql": "^2.18.1",
     "supertest": "^6.2.2"
   }
 }
