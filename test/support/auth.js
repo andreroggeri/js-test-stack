@@ -11,7 +11,7 @@ export default async function getToken() {
     email: faker.internet.email(),
     password: faker.internet.password(),
   };
-
+  
   await api.post("/auth/users/").send(createUserBody).expect(201);
 
   // Act

@@ -1,9 +1,9 @@
 import faker from "@faker-js/faker";
 import { expect } from "chai";
-import { api } from "../support/api.js";
+import { api } from "../../support/api.js";
 
 describe("user registration", () => {
-  xit("should create an user and be able to authenticate", async () => {
+  it("should create an user and be able to authenticate", async () => {
     // Arrange
     const createUserBody = {
       first_name: faker.name.firstName(),

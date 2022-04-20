@@ -1,7 +1,7 @@
 import faker from "@faker-js/faker";
 import { expect } from "chai";
-import { api } from "../support/api.js";
-import getToken from "../support/auth.js";
+import { api } from "../../support/api.js";
+import getToken from "../../support/auth.js";
 
 describe("Patient search", () => {
   let token;
@@ -10,7 +10,7 @@ describe("Patient search", () => {
     token = await getToken();
     clinic = await api
       .post("/v1/clinics/")
-      .set("Authorization", `Token ${token}`)
+      .set("Authorization", `Token ${token.token}`)
       .send({ name: "Some name yuhu" })
       .expect(201);
   });
@@ -25,7 +25,7 @@ describe("Patient search", () => {
     };
     const response = await api
       .post("/v1/patients/")
-      .set("Authorization", `Token ${token}`)
+      .set("Authorization", `Token ${token.token}`)
       .send(createUserBody)
       .expect(201);
 
@@ -35,7 +35,7 @@ describe("Patient search", () => {
   it("should retrieve all patients available", async () => {
     const response = await api
       .get("/v1/patients/")
-      .set("Authorization", `Token ${token}`)
+      .set("Authorization", `Token ${token.token}`)
       .expect(200);
 
     expect(response.body.results).to.have.lengthOf.above(0);
