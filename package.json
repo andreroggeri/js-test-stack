@@ -4,7 +4,7 @@
   "description": "Studying tests with JS",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/*"
+    "testApi": "mocha test/api/*"
   },
   "repository": {
     "type": "git",
