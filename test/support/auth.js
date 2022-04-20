@@ -1,5 +1,5 @@
 import faker from "@faker-js/faker";
-import { api } from "../support/api.js";
+import { api } from "./api.js";
 
 export default async function getToken() {
   const createUserBody = {
@@ -25,6 +25,9 @@ export default async function getToken() {
     .send(authBody)
     .expect(200);
 
-
-  return response.body.auth_token;
+  return {
+    token: response.body.auth_token,
+    email: createUserBody.email,
+    password: createUserBody.password,
+  };
 }
